@@ -1,0 +1,39 @@
+{
+  "name": "swaggerservicelibrary",
+  "version": "0.0.1",
+  "description": "NPM library for using swagger.json APIs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint -f table src/**/*.js index.js",
+    "lint:fix": "eslint --fix src/**/*.js index.js",
+    "tests-only": "jest",
+    "pretest": "npm run --silent tests-only",
+    "test": "npm run --silent tests-only",
+    "posttest": "npm run lint",
+    "build": "babel src --out-dir build",
+    "prepare": "npm run clean && npm run build",
+    "clean": "rimraf .cache build"
+  },
+  "author": "Frank M. Taylor",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel": "^6.23.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-jsdoc": "^36.0.7",
+    "jest": "^27.0.6",
+    "minami": "^1.2.3",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "form-data": "^3.0.1"
+  }
+}
